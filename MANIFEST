@@ -1,0 +1,20 @@
+Build.PL
+example.pl
+lib/Test/TAP/HTMLMatrix.pm
+lib/Test/TAP/HTMLMatrix/htmlmatrix.css
+lib/Test/TAP/HTMLMatrix/template.html
+lib/Test/TAP/Model/Colorful.pm
+lib/Test/TAP/Model/File/Visual.pm
+lib/Test/TAP/Model/Subtest/Visual.pm
+lib/Test/TAP/Model/Visual.pm
+MANIFEST			This list of files
+META.yml
+t/00_dist.t
+t/basic.t
+t/colorful.t
+t/file_visual.t
+t/model_visual.t
+t/paths.t
+t/subtest_visual.t
+Makefile.PL
+SIGNATURE    Added here by Module::Build

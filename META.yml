@@ -1,0 +1,27 @@
+--- #YAML:1.0
+name: Test-TAP-HTMLMatrix
+version: 0.01
+author: ~
+abstract: |-
+  Creates colorful matrix of L<Test::Harness>
+  friendly test run results using L<Test::TAP::Model>.
+license: perl
+requires:
+  Petal: 0
+  Test::TAP::Model: 0
+  perl: '>= 5.008'
+build_requires:
+  Test::More: 0
+provides:
+  Test::TAP::HTMLMatrix:
+    file: lib/Test/TAP/HTMLMatrix.pm
+    version: 0.01
+  Test::TAP::Model::Colorful:
+    file: lib/Test/TAP/Model/Colorful.pm
+  Test::TAP::Model::File::Visual:
+    file: lib/Test/TAP/Model/File/Visual.pm
+  Test::TAP::Model::Subtest::Visual:
+    file: lib/Test/TAP/Model/Subtest/Visual.pm
+  Test::TAP::Model::Visual:
+    file: lib/Test/TAP/Model/Visual.pm
+generated_by: Module::Build version 0.261
