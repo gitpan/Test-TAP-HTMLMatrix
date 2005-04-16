@@ -16,12 +16,12 @@ Hash: SHA1
 
 SHA1 0ae4e9b02a2a8ef940b0dd41376fedfecb6283d0 Build.PL
 SHA1 24b059ae8d005b4b8dacb680709fd8f02de3dd80 MANIFEST
-SHA1 abc8681fb871fa288e362b9e532f064d1ad33633 META.yml
+SHA1 ffa2455446da5de65d60ff76300bf9e961062a14 META.yml
 SHA1 5e33aeef65b2a95b9603f858820e6a654304e58f Makefile.PL
 SHA1 1a9d0fbb6b840b86ae1e9a09214c2e63d86898d9 example.pl
-SHA1 e72e0e4faca65bcd625fe60339c7a5952dd9a916 lib/Test/TAP/HTMLMatrix.pm
-SHA1 8d6870e9fb2593ed689e76aed122adb33566261a lib/Test/TAP/HTMLMatrix/htmlmatrix.css
-SHA1 9708255ab57ad049f827bb19527dd4ac69846584 lib/Test/TAP/HTMLMatrix/template.html
+SHA1 5c964c66ab2fdc916d9d7606a72c3b534c440b1e lib/Test/TAP/HTMLMatrix.pm
+SHA1 c56e1e8ea6cae01143d21ce23afe446d6843e131 lib/Test/TAP/HTMLMatrix/htmlmatrix.css
+SHA1 be17a25390fb5593702676c075826329e41639d8 lib/Test/TAP/HTMLMatrix/template.html
 SHA1 d3703d30da87fbf2315d1275aa7ac9f93bac0d75 lib/Test/TAP/Model/Colorful.pm
 SHA1 87fab8f32aa310bf2ccbe55aea1bb2d695dab659 lib/Test/TAP/Model/File/Visual.pm
 SHA1 ff156bf08a1503d312ecb61e2ddf568d9f228564 lib/Test/TAP/Model/Subtest/Visual.pm
@@ -36,7 +36,7 @@ SHA1 59e8590283cf880f5308beef75523a2c06a7e736 t/subtest_visual.t
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1.2.5 (Darwin)
 
-iD8DBQFCYE3pVCwRwOvSdBgRAv2bAJ4gKhFPqVxz6zkAHre/aXkpT/SbvwCfeVXI
-0vtiLV3q+U2VNrJlSnIZaho=
-=4+4+
+iD8DBQFCYFcbVCwRwOvSdBgRAlqOAJ9m4zWYgkU7NkNdXAgdyeuYXj7NNQCffUP6
+uka8MSVCbKpE/YJ+X2F4Mnk=
+=Ei3r
 -----END PGP SIGNATURE-----
