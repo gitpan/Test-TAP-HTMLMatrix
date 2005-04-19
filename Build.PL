@@ -9,8 +9,9 @@ my $b = Module::Build->new(
 	license => 'perl',
 	requires => {
 		'perl'				=> '>= 5.008',
-		'Test::TAP::Model'	=> 0,
+		'Test::TAP::Model'	=> '>= 0.03',
 		'Petal'				=> 0,
+		'URI::file'			=> 0,
 	},
 	build_requires => {
 		'Test::More' => 0,

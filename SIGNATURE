@@ -14,29 +14,32 @@ not run its Makefile.PL or Build.PL.
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA1
 
-SHA1 0ae4e9b02a2a8ef940b0dd41376fedfecb6283d0 Build.PL
-SHA1 24b059ae8d005b4b8dacb680709fd8f02de3dd80 MANIFEST
-SHA1 ffa2455446da5de65d60ff76300bf9e961062a14 META.yml
-SHA1 5e33aeef65b2a95b9603f858820e6a654304e58f Makefile.PL
+SHA1 45ed83ec587623ffbf5bb49bfe61dcdfca1d6560 Build.PL
+SHA1 2fad20f6b00973b249ab9d9e8c5cabbe3e6f671e MANIFEST
+SHA1 da5ee426562830824aa94b44da4638371d2e621d META.yml
+SHA1 a4ae44a5c17394b83c46919a65cf545d4afc857e Makefile
+SHA1 b9578e152d4300893f3e3926fad4b41a630384a9 Makefile.PL
 SHA1 1a9d0fbb6b840b86ae1e9a09214c2e63d86898d9 example.pl
-SHA1 5c964c66ab2fdc916d9d7606a72c3b534c440b1e lib/Test/TAP/HTMLMatrix.pm
+SHA1 52b7b7d971f7895b1b88cf10e2006058374fdf53 lib/Test/TAP/HTMLMatrix.pm
 SHA1 c56e1e8ea6cae01143d21ce23afe446d6843e131 lib/Test/TAP/HTMLMatrix/htmlmatrix.css
 SHA1 be17a25390fb5593702676c075826329e41639d8 lib/Test/TAP/HTMLMatrix/template.html
 SHA1 d3703d30da87fbf2315d1275aa7ac9f93bac0d75 lib/Test/TAP/Model/Colorful.pm
-SHA1 87fab8f32aa310bf2ccbe55aea1bb2d695dab659 lib/Test/TAP/Model/File/Visual.pm
-SHA1 ff156bf08a1503d312ecb61e2ddf568d9f228564 lib/Test/TAP/Model/Subtest/Visual.pm
+SHA1 27e71ff631046f2cd3ceebca27b35697b993f4b2 lib/Test/TAP/Model/File/Visual.pm
+SHA1 a86cb8f5811419ebbaf1969345afaa0b7098a7eb lib/Test/TAP/Model/Subtest/Visual.pm
 SHA1 dc97cacc98958bd28938c7819df05e0f326f9b90 lib/Test/TAP/Model/Visual.pm
 SHA1 c04440d94389ed001b94cdec72080305ed7d9648 t/00_dist.t
 SHA1 5eabda254775b9d03db77da35152b77bd115e09a t/basic.t
 SHA1 499d6f857af998a28b3e897bf66c53f938e6d963 t/colorful.t
-SHA1 03dce5b291b0077f400c6498040dfdf5324d5319 t/file_visual.t
+SHA1 88e5139c087524f4b115b883bec7b9019653a774 t/file_visual.t
 SHA1 4d2ce15f4567d8eb082856af6892d66bb3223145 t/model_visual.t
 SHA1 45133f5530bdd571ccabaf058651640b5518b0b5 t/paths.t
 SHA1 59e8590283cf880f5308beef75523a2c06a7e736 t/subtest_visual.t
+SHA1 0c7891c49328312c71413496afc5ff85a92efeba t/templ_output.t
+SHA1 5d94ea8dd444a3bb1cb824e484325f5df36e4232 t/uri.t
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1.2.5 (Darwin)
 
-iD8DBQFCYFcbVCwRwOvSdBgRAlqOAJ9m4zWYgkU7NkNdXAgdyeuYXj7NNQCffUP6
-uka8MSVCbKpE/YJ+X2F4Mnk=
-=Ei3r
+iD8DBQFCZT0SVCwRwOvSdBgRAs5RAJ0YllqCycZBunsiKdMuMy3mW7J5wgCeO1cx
+uT0iNnCbrqMDn8Aei/MV7RM=
+=Zopo
 -----END PGP SIGNATURE-----

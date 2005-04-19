@@ -8,8 +8,9 @@ WriteMakefile
           'VERSION_FROM' => 'lib/Test/TAP/HTMLMatrix.pm',
           'PREREQ_PM' => {
                            'Test::More' => 0,
+                           'URI::file' => 0,
                            'Petal' => 0,
-                           'Test::TAP::Model' => 0
+                           'Test::TAP::Model' => '>= 0.03'
                          }
         )
 ;
