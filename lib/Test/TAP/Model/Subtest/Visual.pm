@@ -23,7 +23,11 @@ sub css_class {
 
 sub popup {
 	my $self = shift;
-	join("\n", $self->line, $self->diag);
+	my $text = join("\n", $self->line, $self->diag);
+
+	{ chomp $text and redo };
+
+	$text;
 }
 
 sub link {
@@ -45,7 +49,7 @@ __END__
 
 =head1 NAME
 
-Test::Tap::Model::Subtest::Visual - A subtest with additional display oriented
+Test::TAP::Model::Subtest::Visual - A subtest with additional display oriented
 methods.
 
 =head1 SYNOPSIS

@@ -7,10 +7,7 @@ lib/Test/TAP/Model/Colorful.pm
 lib/Test/TAP/Model/File/Visual.pm
 lib/Test/TAP/Model/Subtest/Visual.pm
 lib/Test/TAP/Model/Visual.pm
-Makefile
-Makefile.PL
 MANIFEST			This list of files
-META.yml
 t/00_dist.t
 t/basic.t
 t/colorful.t
@@ -20,4 +17,6 @@ t/paths.t
 t/subtest_visual.t
 t/templ_output.t
 t/uri.t
+META.yml
+Makefile.PL
 SIGNATURE    Added here by Module::Build

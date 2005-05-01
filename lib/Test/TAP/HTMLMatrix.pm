@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 package Test::TAP::HTMLMatrix;
-use fields qw/model extra petal/;
+use fields qw/model extra petal has_inline_css/;
 
 use strict;
 use warnings;
@@ -14,7 +14,7 @@ use URI::file;
 
 use overload '""' => "html";
 
-our $VERSION = "0.03";
+our $VERSION = "0.04";
 
 sub new {
 	my $pkg = shift;
@@ -29,6 +29,7 @@ sub new {
 		input => "XHTML",
 		output => "XHTML",
 
+		encode_charset => "utf8",
 		decode_charset => "utf8",
 	);
 
@@ -99,6 +100,24 @@ sub css_file {
 sub css_uri {
 	my $self = shift;
 	URI::file->new($self->css_file);
+}
+
+sub has_inline_css {
+	my $self = shift;
+	$self->{has_inline_css} = shift if @_;
+	$self->{has_inline_css};
+}
+
+sub _slurp_css {
+	my $self = shift;
+	local $/;
+	open my $fh, $self->css_file or die "open: " . $self->css_file. ": $!";
+	<$fh>;
+}
+
+sub inline_css {
+	my $self = shift;
+	"\n<!--\n" . $self->_slurp_css . "-->/\n";
 }
 
 __PACKAGE__
@@ -181,6 +200,16 @@ like you'd expect.
 This is a L<URI::file> object based on C<css_file>. Nothing fancy.
 
 You probably want to override this to something more specific to your env.
+
+=item has_inline_css ?$new_value
+
+This accessor controls whether inline CSS will be generated instead of C<<
+<link> >> style stylesheet refs.
+
+=item inline_css
+
+Returns the contents of C<css_file> fudged slightly to work inside C<< <style>
+>> tags.
 
 =back
 
