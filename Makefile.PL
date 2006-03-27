@@ -6,8 +6,9 @@ WriteMakefile
           'VERSION_FROM' => 'lib/Test/TAP/HTMLMatrix.pm',
           'PREREQ_PM' => {
                            'Petal' => '0',
+                           'Petal::Utils' => '0',
                            'Test::More' => '0',
-                           'Test::TAP::Model' => '>= 0.03',
+                           'Test::TAP::Model' => '>= 0.06',
                            'URI::file' => '0'
                          },
           'INSTALLDIRS' => 'site',

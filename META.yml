@@ -1,6 +1,6 @@
 ---
 name: Test-TAP-HTMLMatrix
-version: 0.04
+version: 0.05
 author: ~
 abstract: |-
   Creates colorful matrix of L<Test::Harness>
@@ -8,15 +8,16 @@ abstract: |-
 license: perl
 requires:
   Petal: 0
-  Test::TAP::Model: >= 0.03
+  Petal::Utils: 0
+  Test::TAP::Model: '>= 0.06'
   URI::file: 0
-  perl: >= 5.008
+  perl: '>= 5.008'
 build_requires:
   Test::More: 0
 provides:
   Test::TAP::HTMLMatrix:
     file: lib/Test/TAP/HTMLMatrix.pm
-    version: 0.04
+    version: 0.05
   Test::TAP::Model::Colorful:
     file: lib/Test/TAP/Model/Colorful.pm
   Test::TAP::Model::File::Visual:
@@ -25,4 +26,4 @@ provides:
     file: lib/Test/TAP/Model/Subtest/Visual.pm
   Test::TAP::Model::Visual:
     file: lib/Test/TAP/Model/Visual.pm
-generated_by: Module::Build version 0.2609
+generated_by: Module::Build version 0.2611

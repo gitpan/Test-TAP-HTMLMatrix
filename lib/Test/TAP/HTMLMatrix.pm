@@ -1,41 +1,34 @@
 #!/usr/bin/perl
 
 package Test::TAP::HTMLMatrix;
-use fields qw/model extra petal has_inline_css/;
 
 use strict;
 use warnings;
 
 use Test::TAP::Model::Visual;
+use Test::TAP::Model::Consolidated;
 use Petal;
+use Petal::Utils qw/:logic/;
 use Carp qw/croak/;
 use File::Spec;
+use File::Path;
 use URI::file;
 
 use overload '""' => "html";
 
-our $VERSION = "0.04";
+our $VERSION = "0.05";
 
 sub new {
-	my $pkg = shift;
+	my ( $pkg, @models ) = @_;
 
-	my $model = shift || croak "must supply a model to graph";
+	my $ext = pop @models unless eval { $models[-1]->isa("Test::TAP::Model") };
 
-	my __PACKAGE__ $self = $pkg->fields::new;
+	@models || croak "must supply a model to graph";
 
-	my $ext = shift;
-	my $petal = shift || Petal->new(
-		file => File::Spec->abs2rel($self->template_file), # damn petal requires rel path
-		input => "XHTML",
-		output => "XHTML",
+	my $self = bless {}, $pkg;
 
-		encode_charset => "utf8",
-		decode_charset => "utf8",
-	);
-
-	$self->model($model);
+	$self->model(@models);
 	$self->extra($ext);
-	$self->petal($petal);
 	
 	$self;
 }
@@ -48,26 +41,82 @@ sub tests {
 }
 
 sub model {
-	my __PACKAGE__ $self = shift;
-	$self->{model} = shift if @_;
+	my $self = shift;
+	if (@_) {
+		$self->{model} = $_[0]->isa("Test::TAP::Model::Consolidated")
+			? shift
+			: Test::TAP::Model::Consolidated->new(@_);
+	}
+
 	$self->{model};
 }
 
 sub extra {
-	my __PACKAGE__ $self = shift;
+	my $self = shift;
 	$self->{extra} = shift if @_;
 	$self->{extra};
 }
 
 sub petal {
-	my __PACKAGE__ $self = shift;
-	$self->{petal} = shift if @_;
-	$self->{petal};
+	my $self = shift;
+	my $file = shift;
+
+	Petal->new(
+		file => File::Spec->abs2rel($file), # damn petal requires rel path
+		input => "XHTML",
+		output => "XHTML",
+
+		encode_charset => "utf8",
+		decode_charset => "utf8",
+	);
 }
 
 sub html {
-	my __PACKAGE__ $self = shift;
-	$self->{petal}->process(page => $self);
+	my $self = shift;
+	$self->detail_html;
+}
+
+sub detail_html {
+	my $self = shift;
+	$self->template_to_html($self->detail_template);
+}
+
+sub summary_html {
+	my $self = shift;
+	$self->template_to_html($self->summary_template);
+}
+
+sub output_dir {
+	my $self = shift;
+	my $dir  = shift || die "You need to specify a directory";
+
+	mkpath $dir or die "can't create directory '$dir': $!" unless -e $dir;
+
+	local $self->{_css_uri} = "htmlmatrix.css";
+
+	my %outputs = (
+		"summary.html" => $self->summary_html,
+		"detail.html" => $self->detail_html,
+		( $self->has_inline_css ? () : "htmlmatrix.css" => $self->_slurp_css ),
+	);
+
+	foreach my $file ( keys %outputs ) {
+		open my $fh, ">", File::Spec->catfile( $dir, $file ) or die "can't open '$file' for writing: $!";
+		print $fh $outputs{$file};
+		close $fh or die "can't close '$file'";
+	}
+}
+
+sub template_to_html {
+	my $self = shift;
+	my $path = shift;
+	$self->process_petal($self->petal($path));
+}
+
+sub process_petal {
+	my $self = shift;
+	my $petal = shift;
+	$petal->process(page => $self);
 }
 
 sub _find_in_INC {
@@ -87,9 +136,14 @@ sub _find_in_my_INC {
 	$self->_find_in_INC(File::Spec->catfile(split("::", __PACKAGE__), shift));
 }
 
-sub template_file {
+sub detail_template {
 	my $self = shift;
-	$self->_find_in_my_INC("template.html");
+	$self->_find_in_my_INC("detailed_view.html");
+}
+
+sub summary_template {
+	my $self = shift;
+	$self->_find_in_my_INC("summary_view.html");
 }
 
 sub css_file {
@@ -99,13 +153,24 @@ sub css_file {
 
 sub css_uri {
 	my $self = shift;
-	URI::file->new($self->css_file);
+	$self->{_css_uri} || URI::file->new($self->css_file);
 }
 
 sub has_inline_css {
 	my $self = shift;
 	$self->{has_inline_css} = shift if @_;
 	$self->{has_inline_css};
+}
+
+sub no_javascript {
+	my $self = shift;
+	$self->{no_javascript} = shift if @_;
+	$self->{no_javascript};
+}
+
+sub has_javascript {
+	my $self = shift;
+	!$self->no_javascript;
 }
 
 sub _slurp_css {
@@ -152,17 +217,21 @@ and produce a pretty html file.
 
 =over 4
 
-=item new ($model, $?extra, $?petal)
+=item new (@models, $?extra)
 
-$model is the L<Test::TAP::Model> object to extract results from, and the
-optional $?extra is a string to put in <pre></pre> at the top.
-
-$petal is an optional templater object. If you are not happy with the default
-template, you can use this. Read the source to see how it's processed.
+@model is at least one L<Test::TAP::Model> object (or exactly one
+L<Test::TAP::Model::Consolidated>) to extract results from, and the optional
+$?extra is a string to put in <pre></pre> at the top.
 
 =item html
 
-Returns an HTML string.
+Deprecated method - aliases to C<detail_html>.
+
+=item detail_html
+
+=item summary_html
+
+Returns an HTML string for the corresponding template.
 
 This is also the method implementing stringification.
 
@@ -184,7 +253,9 @@ A reasonable title for the page:
 
 A sorted array ref, resulting from $self->model->test_files;
 
-=item template_file
+=item detail_template
+
+=item summary_template
 
 =item css_file
 
@@ -206,10 +277,28 @@ You probably want to override this to something more specific to your env.
 This accessor controls whether inline CSS will be generated instead of C<<
 <link> >> style stylesheet refs.
 
+=item has_javascript $?new_value
+
+This accessor controls whether to generate a javascript enhanced or javascript
+free version of the reports.
+
 =item inline_css
 
 Returns the contents of C<css_file> fudged slightly to work inside C<< <style>
 >> tags.
+
+=item template_to_html $path
+
+Processes the said template using C<process_petal>.
+
+=item process_petal $petal
+
+Takes a petal object and processes it.
+
+=item no_javascript
+
+A predicate method used in the templates for checking if no javascript is
+desired. The opposite of C<has_javascript>.
 
 =back
 
@@ -247,6 +336,10 @@ putter (svn handle)
 =item *
 
 Autrijs Tang <autrijus@autrjius.org> AUTRIJUS
+
+=item *
+
+Casey West <casey@geeknest.com> CWEST
 
 =item *
 

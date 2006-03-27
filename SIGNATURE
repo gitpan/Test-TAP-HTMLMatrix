@@ -1,5 +1,5 @@
 This file contains message digests of all files listed in MANIFEST,
-signed via the Module::Signature module, version 0.44.
+signed via the Module::Signature module, version 0.52.
 
 To verify the content in this distribution, first make sure you have
 Module::Signature installed, then type:
@@ -14,31 +14,34 @@ not run its Makefile.PL or Build.PL.
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA1
 
-SHA1 45ed83ec587623ffbf5bb49bfe61dcdfca1d6560 Build.PL
-SHA1 8a25c8abc96233eec411fa7181e2a454a9f5ba6c MANIFEST
-SHA1 3233b937cab25707d217f709711d65915ef99de5 META.yml
-SHA1 e55e6b102c03dbd68720e54bdddafc8c3b3a51de Makefile.PL
-SHA1 a0cff662974051fa5446f2c84cc76f5932c8a7d0 example.pl
-SHA1 bd1a5757be36a71dbd571fbb740417e6464858d9 lib/Test/TAP/HTMLMatrix.pm
-SHA1 20cb4d9e38408f820e44c12f27f96cd93505c6a0 lib/Test/TAP/HTMLMatrix/htmlmatrix.css
-SHA1 fa24d30f89aadeba3ddd6228b6939c8059b6432f lib/Test/TAP/HTMLMatrix/template.html
-SHA1 54f31f1c8bf59c64274332746955140183dabda4 lib/Test/TAP/Model/Colorful.pm
-SHA1 a0f8ed66cd9d320f9d95ec10fd8aad08d89b9423 lib/Test/TAP/Model/File/Visual.pm
+SHA1 42d021957bb0d8da4b0ec202fc075361ba36512e Build.PL
+SHA1 15628ebeddec1f2dc87d90ae03396aa7a6d7a4f0 MANIFEST
+SHA1 0e9f27a1efc08590f41704fb2d94fc00bba97f8c META.yml
+SHA1 29e1c736380ad74c4f60e4486c2bd53b2af3c3b9 Makefile.PL
+SHA1 ec53e88907c9df0f91ab7a3300942d5f3c808c5b example.pl
+SHA1 fb46661ed0c11ef8ebe8330164a7a859e6bb2e95 lib/Test/TAP/HTMLMatrix.pm
+SHA1 861e27aa59e7f1f82ced6f3b0b78c122a5ff76f4 lib/Test/TAP/HTMLMatrix/detailed_view.html
+SHA1 04260c1c72b1bfa10a8ce7f422ea8d8aace2dbdc lib/Test/TAP/HTMLMatrix/htmlmatrix.css
+SHA1 16d2703c17ba20b818ad7876d27cc91ac10aaeda lib/Test/TAP/HTMLMatrix/summary_view.html
+SHA1 c940c6a6007999e1d293b0d1ea19e416cdf93349 lib/Test/TAP/Model/Colorful.pm
+SHA1 b9c33c1e56e138efa41877b4638514d447ea84d9 lib/Test/TAP/Model/File/Visual.pm
 SHA1 67a61c1821b2ca2503bc6da617858b6558fd8253 lib/Test/TAP/Model/Subtest/Visual.pm
-SHA1 1dd343853743a971c8e570d20a6ef564357d8443 lib/Test/TAP/Model/Visual.pm
-SHA1 c04440d94389ed001b94cdec72080305ed7d9648 t/00_dist.t
-SHA1 5eabda254775b9d03db77da35152b77bd115e09a t/basic.t
+SHA1 8d72ee356da0f93acf6da92ba43b6143b0332af4 lib/Test/TAP/Model/Visual.pm
+SHA1 b901f417d272c5015a9a3ac408a31ce6649c34ea t/basic.t
 SHA1 499d6f857af998a28b3e897bf66c53f938e6d963 t/colorful.t
+SHA1 7c018669596428ee3d5c4800aeace1e5554e712e t/dummy.t
 SHA1 88e5139c087524f4b115b883bec7b9019653a774 t/file_visual.t
+SHA1 c43eb05306404a23d718d6a065b0d38a704d25b5 t/inline_css.t
 SHA1 3a4af8f5ae0af33c18f70a3ed82887c647546a21 t/model_visual.t
-SHA1 45133f5530bdd571ccabaf058651640b5518b0b5 t/paths.t
+SHA1 b25e831f037147aa4ba691b6f911cb37828171a4 t/no_plan.t
+SHA1 6911f4c8c116c2165098aff4e3b250657141da79 t/paths.t
 SHA1 59e8590283cf880f5308beef75523a2c06a7e736 t/subtest_visual.t
-SHA1 0c7891c49328312c71413496afc5ff85a92efeba t/templ_output.t
+SHA1 895ae11456f54821a65a8042fe2e5b2cafe0cb58 t/templ_output.t
 SHA1 5d94ea8dd444a3bb1cb824e484325f5df36e4232 t/uri.t
 -----BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.0 (GNU/Linux)
+Version: GnuPG v1.4.1 (Darwin)
 
-iD8DBQFCdQp9N2uCuGP2mw4RAuN2AJ9hs6Qtvi/39F7FayB4qAghlE4pWQCghrl4
-Ot7C1o3mrVJLn1+faL0qWhA=
-=s1DE
+iD8DBQFEKDO3VCwRwOvSdBgRAnJQAJ97HPd5P/ayvRkqgM8mdAEsQSwc4ACgjIH3
+DhvgVPZBizoiP1HvRmLNwlw=
+=4rWE
 -----END PGP SIGNATURE-----
