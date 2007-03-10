@@ -1,29 +1,14 @@
----
-name: Test-TAP-HTMLMatrix
-version: 0.05
-author: ~
-abstract: |-
-  Creates colorful matrix of L<Test::Harness>
-  friendly test run results using L<Test::TAP::Model>.
-license: perl
+# http://module-build.sourceforge.net/META-spec.html
+#XXXXXXX This is a prototype!!!  It will change in the future!!! XXXXX#
+name:         Test-TAP-HTMLMatrix
+version:      0.06
+version_from: lib/Test/TAP/HTMLMatrix.pm
+installdirs:  site
 requires:
-  Petal: 0
-  Petal::Utils: 0
-  Test::TAP::Model: '>= 0.06'
-  URI::file: 0
-  perl: '>= 5.008'
-build_requires:
-  Test::More: 0
-provides:
-  Test::TAP::HTMLMatrix:
-    file: lib/Test/TAP/HTMLMatrix.pm
-    version: 0.05
-  Test::TAP::Model::Colorful:
-    file: lib/Test/TAP/Model/Colorful.pm
-  Test::TAP::Model::File::Visual:
-    file: lib/Test/TAP/Model/File/Visual.pm
-  Test::TAP::Model::Subtest::Visual:
-    file: lib/Test/TAP/Model/Subtest/Visual.pm
-  Test::TAP::Model::Visual:
-    file: lib/Test/TAP/Model/Visual.pm
-generated_by: Module::Build version 0.2611
+    Petal:                         0
+    Test::More:                    0
+    Test::TAP::Model:              >= 0.08
+    URI::file:                     0
+
+distribution_type: module
+generated_by: ExtUtils::MakeMaker version 6.30_01

@@ -16,7 +16,7 @@ use URI::file;
 
 use overload '""' => "html";
 
-our $VERSION = "0.05";
+our $VERSION = "0.06";
 
 sub new {
 	my ( $pkg, @models ) = @_;
@@ -262,7 +262,7 @@ A sorted array ref, resulting from $self->model->test_files;
 These return the full path to the L<Petal> template and the CSS stylesheet it
 uses.
 
-Note that these are taken from @INC. If you put F<template.html> under
+Note that these are taken from @INC. If you put F<detailed_view.html> under
 C< catfile(qw/Test TAP HTMLMatrix/) > somewhere in your @INC, it should find it
 like you'd expect.
 
@@ -302,6 +302,12 @@ desired. The opposite of C<has_javascript>.
 
 =back
 
+=head1 VERSION CONTROL
+
+This module is maintained using Darcs. You can get the latest version from
+L<http://nothingmuch.woobling.org/Test-TAP-HTMLMatrix/>, and use C<darcs send>
+to commit changes.
+
 =head1 AUTHORS
 
 This list was generated from svn log testgraph.pl and testgraph.css in the pugs
@@ -335,7 +341,7 @@ putter (svn handle)
 
 =item *
 
-Autrijs Tang <autrijus@autrjius.org> AUTRIJUS
+Audrey Tang <cpan@audreyt.org> AUDREYT
 
 =item *
 
