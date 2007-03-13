@@ -5,10 +5,11 @@ WriteMakefile
           'NAME' => 'Test::TAP::HTMLMatrix',
           'VERSION_FROM' => 'lib/Test/TAP/HTMLMatrix.pm',
           'PREREQ_PM' => {
-                           'Petal' => '0',
-                           'Test::More' => '0',
+                           'Petal'            => '0',
+                           'Petal::Utils'     => '0',
+                           'Test::More'       => '0',
                            'Test::TAP::Model' => '>= 0.08',
-                           'URI::file' => '0'
+                           'URI::file'        => '0'
                          },
           'INSTALLDIRS' => 'site',
           'PL_FILES' => {}
