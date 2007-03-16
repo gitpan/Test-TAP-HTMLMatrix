@@ -3,6 +3,7 @@ example.pl
 lib/Test/TAP/HTMLMatrix.pm
 lib/Test/TAP/HTMLMatrix/htmlmatrix.css
 lib/Test/TAP/HTMLMatrix/detailed_view.html
+lib/Test/TAP/HTMLMatrix/summary_view.html
 lib/Test/TAP/Model/Colorful.pm
 lib/Test/TAP/Model/File/Visual.pm
 lib/Test/TAP/Model/Subtest/Visual.pm
@@ -18,3 +19,4 @@ t/templ_output.t
 t/uri.t
 META.yml
 Makefile.PL
+SIGNATURE    Added here by Module::Build
