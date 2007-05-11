@@ -1,41 +1,16 @@
----
-name: Test-TAP-HTMLMatrix
-version: 0.08
-author:
-  - Yuval Kogman <nothingmuch@woobling.org> NUFFIN
-  - Max Maischein <corion@cpan.org> CORION
-  - James Mastros <james@mastros.biz> JMASTROS
-  - Scott McWhirter <scott-cpan@NOSPAMkungfuftr.com> KUNGFUFTR
-  - Audrey Tang <cpan@audreyt.org> AUDREYT
-  - Casey West <casey@geeknest.com> CWEST
-  - Gaal Yahas <gaal@forum2.org> GAAL
-abstract: |-
-  Creates colorful matrix of L<Test::Harness>
-  friendly test run results using L<Test::TAP::Model>.
-license: perl
-resources:
-  license: http://dev.perl.org/licenses/
-requires:
-  Petal: 0
-  Petal::Utils: 0
-  Test::TAP::Model: '>= 0.08'
-  URI::file: 0
-  perl: '>= 5.008'
-build_requires:
-  Test::More: 0
-provides:
-  Test::TAP::HTMLMatrix:
-    file: lib/Test/TAP/HTMLMatrix.pm
-    version: 0.08
-  Test::TAP::Model::Colorful:
-    file: lib/Test/TAP/Model/Colorful.pm
-  Test::TAP::Model::File::Visual:
-    file: lib/Test/TAP/Model/File/Visual.pm
-  Test::TAP::Model::Subtest::Visual:
-    file: lib/Test/TAP/Model/Subtest/Visual.pm
-  Test::TAP::Model::Visual:
-    file: lib/Test/TAP/Model/Visual.pm
-generated_by: Module::Build version 0.2805
+--- #YAML:1.0
+name:                Test-TAP-HTMLMatrix
+version:             0.09
+abstract:            ~
+license:             ~
+generated_by:        ExtUtils::MakeMaker version 6.32
+distribution_type:   module
+requires:     
+    Petal:                         0
+    Petal::Utils:                  0
+    Test::More:                    0
+    Test::TAP::Model:              >= 0.08
+    URI::file:                     0
 meta-spec:
-  url: http://module-build.sourceforge.net/META-spec-v1.2.html
-  version: 1.2
+    url:     http://module-build.sourceforge.net/META-spec-v1.2.html
+    version: 1.2
